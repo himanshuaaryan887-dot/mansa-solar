@@ -1,0 +1,1 @@
+Place the licensed, compressed homepage video at `solar-hero.mp4` and its poster image at `solar-hero-poster.webp`. The homepage attempts muted inline autoplay and hides the video element if it fails; the CSS photographic background remains visible as the fallback. Test playback on iOS Safari, Android Chrome, slow connections and reduced-data settings before launch.
