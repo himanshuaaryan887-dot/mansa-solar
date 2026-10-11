@@ -1,0 +1,140 @@
+.siteContent {
+  min-height: 100vh;
+}
+
+.revealing {
+  animation: revealSite 500ms ease 3s both;
+}
+
+.introScreen {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 47%, rgba(222, 246, 235, 0.46), transparent 38%),
+    linear-gradient(145deg, #ffffff 0%, #f7fbfe 100%);
+  animation: dismiss 500ms ease 3s forwards;
+  pointer-events: none;
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: clamp(112px, 15vw, 152px);
+  height: clamp(112px, 15vw, 152px);
+  object-fit: contain;
+  animation: logoAppear 850ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.companyName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: textAppear 650ms ease 900ms forwards;
+}
+
+.mansa {
+  color: #123b65;
+  font-family: Manrope, 'DM Sans', sans-serif;
+  font-size: clamp(29px, 5vw, 38px);
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.1;
+}
+
+.solarEnergy {
+  margin-top: 7px;
+  color: #168a54;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  line-height: 1.4;
+}
+
+.experience {
+  margin-top: 19px;
+  opacity: 0;
+  transform: translateY(5px);
+  animation: textAppear 600ms ease 1.9s forwards;
+}
+
+.accent {
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin: 0 auto 12px;
+  border-radius: 2px;
+  background: #20a464;
+  box-shadow: 0 0 12px rgba(32, 164, 100, 0.24);
+}
+
+.experience p {
+  margin: 0;
+  color: #123b65;
+  font-family: Manrope, 'DM Sans', sans-serif;
+  font-size: clamp(17px, 3.8vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.experience b {
+  color: #168a54;
+}
+
+@keyframes logoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealSite {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dismiss {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .introContent {
+    padding: 18px;
+  }
+
+  .logo {
+    width: clamp(104px, 32vw, 132px);
+    height: clamp(104px, 32vw, 132px);
+  }
+}
